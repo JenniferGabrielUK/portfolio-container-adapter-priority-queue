@@ -44,8 +44,28 @@ void test1() {
     display(pq1);
 }
 
+void test2() {
+    std::cout << "\nTest2============================" << std::endl;
+    std::priority_queue<Person> pq;
+    pq.push(Person{ "Jenny", 19 });
+    pq.push(Person{ "Elizabeth", 17 });
+    pq.push(Person{ "Gabriel",21 });
+    std::priority_queue<Person> pq1;
+    std::vector<Person> vec1{
+        {"Jenny", 33},
+        {"Elizabeth", 34},
+        {"Gabriel", 35}
+    };
+    for (auto i : vec1) {
+        pq1.push(i);
+    }
+    display(pq);
+    display(pq1);
+}
+
 int main()
 {
     tets1();
+    tets2();
     return 0;
 }
