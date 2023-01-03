@@ -1,0 +1,29 @@
+// portfolio-container-adaptorspriority-queue.cpp : This file contains the 'main' function. Program execution begins and ends there.
+#include <iostream>
+#include <queue>
+
+class Person {
+    friend std::ostream& operator << (const Person& p, std::ostream& os);
+    std::string name;
+    int age{};
+public:
+    Person() = default;
+    Person(std::string name = "unknown", int age = 0) : name{name}, age{age} {}
+    ~Person() = default;
+    bool operator<(const Person& p) const { return this->age < p.age; }
+    bool operator=(const Person& p) const { return this->name == p.name && this->age == p.age; }
+};
+
+std::ostream& operator << (const Person& p, std::ostream& os) {
+    os << p.name << " " << p.age << std::endl;
+    return os;
+}
+
+
+
+
+int main()
+{
+
+    return 0;
+}
