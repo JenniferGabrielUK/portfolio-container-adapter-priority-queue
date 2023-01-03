@@ -19,8 +19,16 @@ std::ostream& operator << (const Person& p, std::ostream& os) {
     return os;
 }
 
-
-
+template <typename T>
+void display(std::priority_queue<T> pq) {
+    std::cout << "[";
+    while(!pq.emplty()) {
+        T elem = pq.top();
+        pq.pop();
+        std::cout << elem << " ";
+    }
+    std::cout << "]" << std::endl;
+}
 
 int main()
 {
